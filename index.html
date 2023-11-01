@@ -1,36 +1,151 @@
-<!-- Add icon library -->
-
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-   <link rel="stylesheet" href="style.css">
-   <script src="https://cdn.tailwindcss.com"></script>
-</head>
-<body>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+*,
+::before,
+::after {
+    position: relative;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: black;
+    color: white;
+    display: flex;
+    align-items: center;
+    height: 100vh;
+
+}
+
+/* Card */
+.card {
+    border: 2px solid white;
+    box-shadow: 0px 0px 5px white;
+    padding: 2em;
+    max-width: 250px;
+    width: 100%;
+    text-align: center;
+    margin: auto;
+    font-size: 18x;
+    background: black;
+    transition: 1.5s ease;
+    transform-style: preserve-3d;
     
-<div class="card rounded-lg mt-5 shadow-lg">
-    <img src="https://hpconnect.vn/wp-content/uploads/2020/02/H%C3%ACnh-%E1%BA%A3nh-phong-c%E1%BA%A3nh-thi%C3%AAn-nhi%C3%AAn-31.jpg" alt="John" style="width:100%">
-    <img src="" alt="">
-    <p class="title font-bold text-2xl p-4">Triệu Thị Khánh Linh</p>
-    <p>09/06/2003</p>
-      <div class="flex justify-around">
-        <div>
-            <p class="text-blue-500 font-bold text-xl">12</p>
-            <p>Followers</p>
-          </div>
-          <div>
-            <p class="text-blue-500 font-bold text-xl">1000</p>
-            <p>Followering</p>
-          </div>
+  
+}
+
+.card:hover {
+    transform: rotateY(.5turn);
+}
+
+/* Content */
+.card .content {
+    transform-style: preserve-3d;
+  
+    transition: 1s ease;
+  
+}
+
+.card .back, .card .front {
+    transform-style: preserve-3d;
+    backface-visibility: hidden;
+    
+    display: flex;
+    flex-direction: column;
+  
+}
+
+.card {
+  text-shadow: 0 0 1px black;
+}
+
+.card .back {
+    transform: rotateY(.5turn);
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+}
+
+.card p,
+.card h2 {
+    transform: translateZ(75px);
+}
+
+.card p {
+    font-size: 1em;
+    line-height: 1.6em;
+}
+
+.card h2 {
+    margin: 0 0 20px 0;
+    font-size: 2.25em;
+}
+
+.card::before,
+.card::after{
+  content: "";
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  position: absolute;
+  
+ 
+  transform: rotateY(.5turn) translateZ(1px);
+
+}
+
+
+.card:hover::before {
+  background-image: url('https://vnkings.com/wp-content/uploads/2020/06/df47bd458bf9c7b5e55a8c248cacde0e.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+    </style>
+</head>
+<body class="bg-pink-200 ">
+    <div class="card shadow-2xl bg-[url('https://imbd.edu.vn/wp-content/uploads/2023/10/avatar-dep-2.jpg')] bg-[length:450px_200px] bg-no-repeat max-w-md mx-auto bg-white shadow-md rounded-xl p-6 mt-10 ">
+      <div class="content">
+       <div class="font">
+        <div class="relative mt-24  p-1 bg-pink-500 w-36 h-36 rounded-full bg-blue-500 mx-auto shadow-xl">
+            <img src="https://i.pinimg.com/originals/4a/55/76/4a55768adc5e9c5bad96afcfb37a1707.jpg" alt="" class="  w-full h-full rounded-full">
+        </div>
+        <div class="text-center mt-4">
+            <h2 class="text-xl text-pink-400  font-bold">Triệu Thị Khánh Linh</h2>
+            <p class="text-gray-500">09/06/2003</p>
+            <div class="flex justify-around mt-4">
+                <div>
+                    <h3 class="font-bold text-xl text-blue-500">12</h3>
+                    <h4 class="text-gray-500 ">Followers</h4>
+                </div>
+                <div>
+                    <h3 class="font-bold text-xl text-blue-500">1000</h3>
+                    <h4 class="text-gray-500">Following</h4>
+                </div>
+            </div>
+            <div class="mt-4">
+                <button class="bg-yellow-400 rounded-full text-white px-4 py-2 w-[80%] my-4 hover:bg-pink-200 transition duration-300 font-bold text-lg ">Follow</button>
+            </div>
+            <p class="text-gray-500">
+                Quê quán: Lập Thạch-Vĩnh Phúc <br>
+                Định hướng : Lập trình Fontend <br>
+                Ngôn ngữ đã học: JavaScript
+            </p>
+        </div>
+        <div class="back">
+            <img src="https://vnkings.com/wp-content/uploads/2020/06/df47bd458bf9c7b5e55a8c248cacde0e.jpg" alt="">
+        </div>
+       </div>
       </div>
-    <p><button class="bg-yellow-400 rounded mb-9 mt-5 w-[70%]">Follow</button></p>
-    <p>Định hướng: lập trình Fontend</p>
-    <p class="p-3">Ngôn ngữ đã học Javascript</p>
-  </div>
+    </div>
 </body>
 </html>
